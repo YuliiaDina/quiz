@@ -1,0 +1,32 @@
+{
+  "steps": [
+    {
+      "id": "primary-need",
+      "title": "I PRIMARILY NEED HELP WITH…",
+      "type": "single",
+      "options": [
+        { "id": "retirement", "label": "Retirement planning" },
+        { "id": "investing", "label": "Investment planning" },
+        { "id": "budgeting", "label": "Budgeting & cash flow" },
+        { "id": "debt", "label": "Debt payoff strategy" },
+        { "id": "tax", "label": "Tax planning (coordination)" },
+        { "id": "insurance", "label": "Insurance planning" },
+        { "id": "education", "label": "Education / college planning" },
+        { "id": "estate", "label": "Estate planning (coordination)" },
+        { "id": "home", "label": "Buying a home / mortgage planning" },
+        { "id": "business", "label": "Business owner finances" }
+      ]
+    },
+    {
+      "id": "engagement",
+      "title": "I’M LOOKING FOR…",
+      "type": "single",
+      "options": [
+        { "id": "one-time", "label": "A one-time plan" },
+        { "id": "ongoing", "label": "Ongoing financial guidance" },
+        { "id": "second-opinion", "label": "A second opinion" },
+        { "id": "getting-started", "label": "Help getting started" }
+      ]
+    }
+  ]
+}

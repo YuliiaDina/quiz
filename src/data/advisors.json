@@ -1,0 +1,75 @@
+
+[
+  {
+    "id": "a1",
+    "name": "Sarah Mitchell, CFP®",
+    "title": "Certified Financial Planner • Retirement & Investing",
+    "location": "Austin, TX (Video available)",
+    "bio": "I help busy professionals build retirement plans and investment strategies they can stick to, with clear steps and regular check-ins.",
+    "specialties": ["retirement", "investing", "tax"],
+    "serviceModel": "ongoing"
+  },
+  {
+    "id": "a2",
+    "name": "David Park",
+    "title": "Financial Advisor • Budgeting & Cash Flow",
+    "location": "Remote (US)",
+    "bio": "I help clients get control of cash flow, build a realistic budget, and set up a simple system that works month after month.",
+    "specialties": ["budgeting", "debt"],
+    "serviceModel": "getting-started"
+  },
+  {
+    "id": "a3",
+    "name": "Monica Reyes, EA",
+    "title": "Enrolled Agent • Tax Planning Coordination",
+    "location": "Chicago, IL (Video available)",
+    "bio": "I coordinate tax planning strategies with your CPA, help you avoid surprises, and align taxes with your investment and retirement goals.",
+    "specialties": ["tax", "investing", "retirement"],
+    "serviceModel": "second-opinion"
+  },
+  {
+    "id": "a4",
+    "name": "Kevin Brooks",
+    "title": "Advisor • Debt Payoff & Home Buying",
+    "location": "Phoenix, AZ (In-person)",
+    "bio": "I help clients pay down debt strategically and prepare for major purchases like buying a home—without sacrificing long-term goals.",
+    "specialties": ["debt", "home", "budgeting"],
+    "serviceModel": "one-time"
+  },
+  {
+    "id": "a5",
+    "name": "Aisha Khan",
+    "title": "Insurance Planning Specialist",
+    "location": "Remote (Video)",
+    "bio": "I help families choose the right life and disability coverage, integrate it into their broader plan, and keep costs reasonable.",
+    "specialties": ["insurance", "retirement"],
+    "serviceModel": "one-time"
+  },
+  {
+    "id": "a6",
+    "name": "Thomas Greene",
+    "title": "Education & College Planning Advisor",
+    "location": "Denver, CO (Video available)",
+    "bio": "I help parents plan for college costs, choose savings strategies, and balance education goals with retirement priorities.",
+    "specialties": ["education", "investing", "budgeting"],
+    "serviceModel": "ongoing"
+  },
+  {
+    "id": "a7",
+    "name": "Lena Novak",
+    "title": "Estate Planning Coordination Advisor",
+    "location": "Remote",
+    "bio": "I help clients organize beneficiaries, coordinate estate planning with attorneys, and ensure plans stay aligned with family goals.",
+    "specialties": ["estate", "insurance", "tax"],
+    "serviceModel": "second-opinion"
+  },
+  {
+    "id": "a8",
+    "name": "Marcus Chen",
+    "title": "Business Owner Finances • Cash Flow & Tax Strategy",
+    "location": "San Francisco, CA (Video available)",
+    "bio": "I help business owners manage cash flow, plan for taxes, and structure savings so personal and business goals work together.",
+    "specialties": ["business", "tax", "budgeting"],
+    "serviceModel": "ongoing"
+  }
+]
