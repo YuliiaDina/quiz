@@ -5,12 +5,12 @@ class AdvisorsOnTheList extends React.Component {
   render() {
     let match;
     if (this.props.currAdvisor.specialties.includes(this.props.ans[0])){
-      match = "Specialties"
+      match = "Specializes in Retirement planning"
     }
     else {
-      match = "Service model"
+      match = "Offers Ongoing financial guidance"
     }
-    
+
     return (
       <button
         className="advisorsResDesign"
