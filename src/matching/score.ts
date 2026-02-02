@@ -1,25 +1,38 @@
-/*
-import {advisor} from "../ts/advisor"
-import { answer } from "../ts/answer";
+import {advisors} from "../ts/advisor.ts"
+import {Advisor} from "../ts/advisor"
 const firstQuestionWeight: number= 2;
-const secondQuestionWeigt: number = 1;
+const secondQuestionWeight: number = 1;
 
-export function a(userAns:answer,advisorsData:advisor[]){
-    let find:Record<string, number> = {};
-    advisorsData.forEach((advisor) =>{
-        for(let i = 0;i<advisor.specialties.length;i++){
-            if(userAns.firstAnswer === advisor.specialties[i]){
-                find.set({[advisor.id]:firstQuestionWeight})
-            }
+export function choosingAdvisor(userAns: string[]) : Advisor[]{
+    let find: Record<string, number> = {};
+    advisors.forEach((advisor) => {
+        const id = advisor.id;
+        
+        if (!find[id]) {
+            find[id] = 0;
         }
-        if(advisor.serviceModel === userAns.secondAnswer){
-            find[advisor.id] += secondQuestionWeigt;
+
+        if (advisor.specialties.includes(userAns[0])) {
+            find[id] += firstQuestionWeight;
         }
+
+        if (advisor.serviceModel === userAns[1]) {
+            find[id] += secondQuestionWeight;
+        }
+    });
     
-    })
+
     return advisorSort(find);
 }
-function advisorSort(find: { [x: string]: number; }[]) {
-    return find.sort();
+
+
+function advisorSort(scores: Record<string, number>): Advisor[] {
+  const topThree = Object.entries(scores)
+  
+    .sort(([, scoreA], [, scoreB]) => scoreB - scoreA)
+    .slice(0, 3)
+    .map(([id]) => advisors.find(a => a.id === id))
+    .filter((advisor): advisor is Advisor => !!advisor);
+
+  return topThree.sort((a, b) => a.name.localeCompare(b.name));
 }
-*/

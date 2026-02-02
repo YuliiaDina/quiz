@@ -1,49 +1,78 @@
 import React from "react";
+import { Routes, Route } from 'react-router-dom';
 import "../css/App.css";
-import Question from "./components/quiz/Question.js";
-import Answer from "./components/quiz/Answer.js";
+import QuizComponent from "./components/QuizComponent.js";
 import Button from "./components/Button.js";
-import quizData from "../data/quiz.json" with { type: "json" };
-import Results from "./Results.js";
+import { quiz } from "../ts/quiz.ts";
+import Results from "./components/resultsOfQuiz/Results.js";
+import AdvisorPage from "./components/pageOfAdvisor/AdvisorPage.js"
+import { Router } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      click: 0,
+      currentStep: 0,
+      userAnswers: new Array(quiz.steps.length).fill(null),
+      advisor:null,
     };
   }
+
   addClickCount = () => {
-    this.setState((prevState) => ({ click: prevState.click + 1 }));
+    this.setState((prevState) => ({ currentStep: prevState.currentStep + 1 }));
   };
-  subClickCount = () => {
-    this.setState((prevState) => ({ click: prevState.click - 1 }));
+  subStepCount = () => {
+    this.setState((prevState) => ({ currentStep: prevState.currentStep - 1 }));
   };
 
-  render() { 
-    return ( /*TODO: перенести наступну частину коду в окремий файл в quiz.js*/
+
+  setUserAnswer = (value) => {
+    const { currentStep, userAnswers } = this.state;
+    const newAnswers = [...userAnswers];
+    newAnswers[currentStep] = value;
+    this.setState({ userAnswers:newAnswers });
+  };
+
+  setAdvisor = (value)=>{
+    this.setState(({ advisor: value}))
+  }
+
+  render() {
+    return (
       <div className="App"> 
-        {this.state.click < 2 && ( //TODO:  замінити 2 на динамічну змінну(на кількість питань в квізі)
-          <div className="quiz-container">
-            <Question questionText={quizData.steps[this.state.click].title} />
-            {quizData.steps[this.state.click].options.map((option) => (
-              <Answer key={option.id} answerText={option.label} />
-            ))}
-            <Button
-              id="nextButton" //TODO:зробити, щоб зникала поки не вибрана одна з варіантів відповідей
-              updateClick={this.addClickCount}
-              text="Save & Next Question"
-            />
-          </div>
+      <Routes> 
+        {this.state.currentStep < quiz.steps.length && (
+          
+          <Route path="/" element= {<QuizComponent
+            addClick={this.addClickCount}
+            currentStep={this.state.currentStep}
+            answers = {this.state.userAnswers}
+            setUsAns = {this.setUserAnswer}
+          />}/>
         )}
-        {this.state.click > 0 && (
+        <Route path="/" element= 
+        {this.state.currentStep === quiz.steps.length &&( 
+          <Results 
+            addClick={this.addClickCount}
+            ans = {this.state.userAnswers}
+            setAdv = {this.setAdvisor}
+            
+          />
+          )}/>
+          
+          </Routes>
+          {this.state.currentStep > 0 && (
           <Button
             id="backButton"
-            updateClick={this.subClickCount}
+            updateClick={this.subStepCount}
             text="Back"
           />
         )}
-        {this.state.click === quizData.steps.length && <Results />}
+        {this.state.currentStep === quiz.steps.length+1 &&( 
+          <AdvisorPage
+            advisor = {this.state.advisor}
+          />
+          )}
       </div>
     );
   }

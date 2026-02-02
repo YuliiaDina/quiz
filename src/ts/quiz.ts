@@ -1,4 +1,6 @@
-export interface quiz{
+import quizData from "../data/quiz.json";
+
+export interface Quiz{
     steps:Array<step>;
 }
 interface step{
@@ -12,3 +14,6 @@ interface option{
     id:string;
     label:string;
 }
+
+
+export const quiz: Quiz = quizData as Quiz;

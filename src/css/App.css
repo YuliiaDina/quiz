@@ -87,31 +87,140 @@ input[type="radio"] {
   background-color: #0f0c5069;
 }
 
+.advisorCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 рівні стовпці */
+  gap: 20px;
+  padding: 20px;
+}
+
 .advisorsResDesign {
+  width: 100%;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: white;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin: auto;
-  background-color: aliceblue;
-  border: 2px solid #0f0c50;
-  border-radius: 15px;
-  width: 200%;
-  max-width: 450px;
-  height: 15%;
-  padding: 4% 5%;
-  gap: 25px;
-  cursor: pointer; 
-  z-index: 150;
+  align-items: flex-start; 
+  transition: all 0.1s ease; 
+  outline: none;
+}
+
+.advisorsResDesign:hover {
+  border-color: #007bff;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px); /* Легке підняття вгору */
+}
+
+.advisorHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.advisorImg {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%; 
+  object-fit: cover;
+  background-color: #ddd; /* Колір поки фото вантажиться */
+}
+
+.advisorName {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.whWeMatched {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: left;
+}
+
+.advisorPageHeader {
+  width: 96.5%;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.1s ease;
+  outline: none;
   position: relative;
 }
 
-.whWeMatched{
-  text-align: center;
-  z-index: 151;
-  position: absolute;
-  justify-content: center;
+
+.headerTopRow {
+  display: flex;
   align-items: center;
-  margin: auto;
-  
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  min-height: 80px;
+
+}
+
+.iconAdvisor {
+  width: 180px; 
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ddd;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.advisorPageName {
+  font-weight: bold;
+  font-size: 1.5rem; 
+  margin: 0;
+  text-align: center;
+}
+
+
+.advisorDetails {
+  margin-top: 100px;
+  text-align: left;
+  line-height: 1.6;
+  color: #333;
+}
+
+.advisorDetails p {
+  margin: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 3px;
+}
+
+.advisorPageHeader:hover {
+  border-color: #bbb;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.advisorBio{
+  text-align: left;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 70px;
+}
+
+.WriteMessage{
+  position: fixed;
+  bottom: 6%;
+  right: 1%;
+  padding: 2% 2%;
+  background-color: aliceblue;
+  border-color: #0f0c50;
+  border-radius: 50px;
+  z-index: 1000;
+}
+
+.WriteMessage:hover {
+  background-color: #0f0c5069;
 }
